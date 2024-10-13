@@ -40,16 +40,18 @@ export default function PotentialMembers() {
       <div className="grid grid-cols-5 gap-2 mt-5">
         {members.map((member, idx) => (
           <div
-            className="w-full rounded-xl border-[1px] border-stroke-clr py-3 px-[18px] text-center"
+            className="w-full rounded-xl border-[1px] border-stroke-clr py-3 flex flex-col justify-between px-[18px] text-center cursor-pointer transition-all hover:bg-grey-clr hover:shadow-xl hover:shadow-black/5"
             key={idx}
           >
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-10 mx-auto"
-            />
-            <p className="font-[700] text-black-clr mt-2">{member.name}</p>
-            <p className="text-xs text-light-clr">{member.hashtag}</p>
+            <div>
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-10 mx-auto"
+              />
+              <p className="font-[700] text-black-clr mt-2">{member.name}</p>
+              <p className="text-xs text-light-clr">{member.hashtag}</p>
+            </div>
             <span className="flex gap-2 items-end justify-center">
               <span className="flex">
                 <img src={icon.analytics_member} alt="" className="flex" />

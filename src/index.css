@@ -140,6 +140,11 @@ p {
   font-size: 14px;
 }
 
+a.navLink:hover::before {
+  background: #ffe4c7;
+  transform: scaleY(1);
+}
+
 a.navLink.active .navChild {
   box-shadow: 0 4px 58px 0 rgba(0, 0, 0, 0.07);
   color: var(--pry-clr);
@@ -151,10 +156,13 @@ a.navLink::before {
   height: 32px;
   border-radius: 0 6px 6px 0;
   background: transparent;
+  transform: scaleY(0);
+  transition: all 0.3s;
 }
 
 a.navLink.active::before {
   background: var(--pry-clr);
+  transform: scaleY(1);
 }
 
 .messages {

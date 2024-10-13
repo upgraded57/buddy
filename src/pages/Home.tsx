@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <Topbar header="My Portfolio" />
-      <div className="h-full pb-4 flex gap-8">
-        <div className="basis-[70%] w-full">
+      <div className="h-full pb-4 flex flex-col xl:flex-row gap-8">
+        <div className="xl:basis-[70%] w-full">
           <div className=" w-full grid grid-cols-3 gap-4 mb-4">
             <Card type={1} qty={51} />
             <Card type={2} qty={125} />
@@ -23,15 +23,15 @@ export default function Home() {
           <div className="w-full bg-white rounded-2xl mb-4 p-6">
             <TrendingPosts />
           </div>
-          <div className="w-full bg-white rounded-2xl mb-4 p-6">
+          <div className="w-full bg-white rounded-2xl p-6">
             <PotentialMembers />
           </div>
         </div>
-        <div className="basis-[30%]">
-          <div className="w-full bg-white rounded-2xl mb-4 p-5">
+        <div className="xl:basis-[30%] flex flex-row xl:flex-col gap-5 pb-5">
+          <div className="w-full bg-white rounded-2xl p-5">
             <Watchlist />
           </div>
-          <div className="w-full bg-white rounded-2xl mb-4 p-5">
+          <div className="w-full bg-white rounded-2xl p-5">
             <Revenue />
           </div>
           <div className="w-full bg-white rounded-2xl p-5">

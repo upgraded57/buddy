@@ -1,5 +1,6 @@
 import icon from "@/lib/icons";
 import { Input } from "@/components/ui/input";
+import { Button } from "./ui/button";
 
 interface TopbarProps {
   header: String;
@@ -18,13 +19,13 @@ export default function Topbar({ header }: TopbarProps) {
           />
         </div>
 
-        <div className="w-12 aspect-square rounded-full bg-white flex items-center justify-center">
+        <Button variant="icon" className="w-12 h-12 bg-white hover:bg-gray-200">
           <img src={icon.plus} alt="Add New" />
-        </div>
+        </Button>
 
-        <div className="w-12 aspect-square rounded-full bg-white flex items-center justify-center">
+        <Button variant="icon" className="w-12 h-12 bg-white hover:bg-gray-200">
           <img src={icon.bell} alt="Notifications" />
-        </div>
+        </Button>
       </div>
     </div>
   );

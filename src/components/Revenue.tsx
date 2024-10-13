@@ -23,7 +23,7 @@ export default function Revenue() {
       <h3 className="mb-4">Revenue</h3>
       {revenues.map((revenue, idx) => (
         <div
-          className="w-full p-3 rounded-xl border-[1px] border-stroke-clr mb-3 flex items-center justify-between"
+          className="w-full p-3 rounded-xl border-[1px] border-stroke-clr mb-3 flex items-center justify-between cursor-pointer transition-all hover:bg-grey-clr hover:shadow-xl hover:shadow-black/5"
           key={idx}
         >
           <span>

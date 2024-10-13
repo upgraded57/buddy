@@ -1,50 +1,15 @@
-# React + TypeScript + Vite
+# Notice!!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the final version of the buddy exercise.
+Please note the following information
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Both vanilla CSS and tailwind css as used for styling
+- Shadcn UI components are used
+- The dashboard subroutes are protected and lazily loaded with React Suspense
+- The graph on the dashboard cannot be styled to look exactly as in the UI (the hover state) because the Shadcn UI chart component was used to render the graph. Shadcn Ui chart component has little cutomizable features on hover. Hence, I opted to use solid colors for the bars in the graph
+- A token (generated on login) is required to access the protected routes.
+- The token is stored in session storage while the user information is stored in local storage.
+- The otp for verification is autofilled on the otp verification page. This is bacause the otp is part of the response object on account creation and is not sent to the email used for account creation. Please interact with the otp input field to enable the "Confirm OTP" button.
+- No state is managed throughout the application. This is because there aren't much state to be managed. The user info and access token are retrieved from the browser storage whenever needed.
+- Minor changes were made to the UI on small and medium screen devices for responsiveness. This is to make the application a little bit usable on small and medium screens
+- The messages functionality was not simulated with local storage as advised in the instruction. This is because I thought there will be no need for the sent messages to be persistent since no replies will be gotten. A user can send messages nonetheless, as the messages are stored in an array. However, default messages are restored on page reload.

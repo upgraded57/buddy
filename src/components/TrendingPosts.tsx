@@ -1,6 +1,8 @@
 import icon from "@/lib/icons";
 
 export default function TrendingPosts() {
+  const btnStyles =
+    "flex gap-1 items-center bg-accent-light-clr cursor-pointer py-1 px-2.5 rounded-full hover:bg-gray-200";
   const posts = [
     {
       title: "8 Upcoming Influencer Marketing Trends and Benefits",
@@ -22,28 +24,30 @@ export default function TrendingPosts() {
   return (
     <div>
       <h3>Trending Posts</h3>
-      <div className="grid grid-cols-2 gap-4 mt-5">
+      <div className="grid grid-cols-2 gap-4 mt-5 ">
         {posts.map((post, idx) => (
           <div
-            className="w-full rounded-xl border-[1px] border-stroke-clr p-4"
+            className="w-full rounded-xl border-[1px] border-stroke-clr p-4 flex flex-col cursor-pointer transition-all justify-between hover:bg-grey-clr hover:shadow-xl hover:shadow-black/5"
             key={idx}
           >
-            <h4>{post.title}</h4>
-            <p className="mt-2">{post.summary}</p>
+            <div>
+              <h4>{post.title}</h4>
+              <p className="mt-2">{post.summary}</p>
+            </div>
             <div className="flex items-center gap-3 mt-5">
-              <div className="flex gap-1 items-center bg-accent-light-clr py-1 px-2.5 rounded-full">
+              <div className={btnStyles} title="Likes">
                 <span>❤️</span>
                 <p className="font-[700]">{post.likes}</p>
               </div>
-              <div className="flex gap-1 items-center bg-accent-light-clr py-1 px-2.5 rounded-full">
+              <div className={btnStyles} title="Comments">
                 <span>
-                  <img src={icon.comment} alt="" />
+                  <img src={icon.comment} alt="Comment on Post" />
                 </span>
                 <p className="font-[700]">{post.comments}</p>
               </div>
-              <div className="flex gap-1 items-center bg-accent-light-clr py-1 px-2.5 rounded-full">
+              <div className={btnStyles} title="Shares">
                 <span>
-                  <img src={icon.share} alt="" />
+                  <img src={icon.share} alt="Share Post" />
                 </span>
                 <p className="font-[700]">{post.shares}</p>
               </div>

@@ -28,12 +28,12 @@ const ChooseRegistrationType = ({ setAuthStep }: registrationProp) => {
           <img
             src={icon.email}
             alt=""
-            className="absolute left-[100px] pointer-events-none"
+            className="absolute left-[25%] pointer-events-none"
           />
           <Button
             type="button"
             variant="outline"
-            className="w-full"
+            className="w-full hover:bg-grey-clr"
             onClick={() => setAuthStep("end")}
           >
             Sign up with email
@@ -49,9 +49,13 @@ const ChooseRegistrationType = ({ setAuthStep }: registrationProp) => {
           <img
             src={icon.google}
             alt=""
-            className="absolute left-[100px] pointer-events-none"
+            className="absolute left-[25%] pointer-events-none"
           />
-          <Button type="button" variant="outline" className="w-full">
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full hover:bg-grey-clr"
+          >
             Sign up with Google
           </Button>
         </div>
@@ -127,6 +131,7 @@ const CompleteRegistration = () => {
               className="pl-12"
               placeholder="First Name"
               name="first_name"
+              required
               value={cred.first_name}
               onChange={handleInputChange}
             />
@@ -141,6 +146,7 @@ const CompleteRegistration = () => {
               className="pl-12"
               placeholder="Last Name"
               name="last_name"
+              required
               value={cred.last_name}
               onChange={handleInputChange}
             />
@@ -157,6 +163,7 @@ const CompleteRegistration = () => {
             className="pl-12"
             placeholder="Work email"
             name="email"
+            required
             value={cred.email}
             onChange={handleInputChange}
           />
@@ -172,6 +179,7 @@ const CompleteRegistration = () => {
             className="px-12"
             placeholder="Password"
             name="password"
+            required
             value={cred.password}
             onChange={handleInputChange}
           />

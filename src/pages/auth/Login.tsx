@@ -51,6 +51,7 @@ export default function Login() {
             className="pl-12"
             placeholder="Email"
             name="email"
+            required
             value={cred.email}
             onChange={handleInputChange}
           />
@@ -66,6 +67,7 @@ export default function Login() {
             className="px-12"
             placeholder="Password"
             name="password"
+            required
             value={cred.password}
             onChange={handleInputChange}
           />

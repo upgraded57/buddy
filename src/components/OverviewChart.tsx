@@ -42,8 +42,8 @@ export default function OverviewChart() {
             cursor={true}
             content={<ChartTooltipContent indicator="dot" />}
           />
-          <Bar dataKey="purchaseValue" fill="#F1F1F2" radius={0} barSize={12} />
-          <Bar dataKey="marketValue" fill="#E6E6E7" radius={0} barSize={12} />
+          <Bar dataKey="purchaseValue" fill="#FFB800" radius={0} barSize={12} />
+          <Bar dataKey="marketValue" fill="#FF8600" radius={0} barSize={12} />
         </BarChart>
       </ChartContainer>
     </div>

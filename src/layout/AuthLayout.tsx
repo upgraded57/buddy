@@ -16,7 +16,7 @@ export default function AuthLayout({ children, showHelpBtn }: propsType) {
       </div>
       <div className="basis-1/2 w-full py-10 h-full bg-grey-clr flex items-center justify-center md:px-[4vw]">
         <div
-          className={`w-[490px] space-y-14 relative ${
+          className={`max-w-[490px] w-full space-y-14 relative ${
             !showHelpBtn && "top-[-40px]"
           }`}
         >
